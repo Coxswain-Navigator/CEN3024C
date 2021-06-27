@@ -2,9 +2,13 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Label;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.wb.swt.SWTResourceManager;
+import org.junit.jupiter.api.Test;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.events.MouseAdapter;
@@ -145,6 +149,7 @@ public class ReaderTextReader {
 				int given = Integer.parseInt(userinput_txt.getText());
 				int resultnumber = 0;
 				String resultletter = "Nothing";
+				
 				switch (given) {
 				case 0 :
 					resultnumber = 0;
@@ -241,6 +246,15 @@ public class ReaderTextReader {
 		nextword_btn.setFont(SWTResourceManager.getFont("Segoe UI", 30, SWT.NORMAL));
 		nextword_btn.setText("Check word");
 
+	}
+	@Test //This is a demonstration that should usually fail.
+	void test() { 
+	int given = 0;;
+	int resultnumber = 0;
+	String resultletter = "Nothing";
+		assertEquals("0", given);
+		assertEquals("0", resultnumber);
+		assertEquals("Nothing", resultletter);
 	}
 
 }
